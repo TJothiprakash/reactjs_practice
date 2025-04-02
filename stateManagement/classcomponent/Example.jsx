@@ -1,3 +1,5 @@
+import React from "react";
+
 class Example extends React.Component {
   state = {
     name: "John",

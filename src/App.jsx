@@ -15,41 +15,69 @@ import Item from "../classcomponents/Item";
 import FunctionalComponent from "/stateManagement/functionalComponent.jsx";
 import UserDetails from "/stateManagement/UserDetails";
 import ButtonComponent from "../components/ButtonComponent";
-import MyForm from "/stateManagement/MyForm.jsx";
+import Forms from "/stateManagement/Forms.jsx";
 import ColorChanger from "/stateManagement/ColorChanger";
 import ToggleVisibility from "/stateManagement/ToggleVisibility";
 import ShoppingCart from "/stateManagement/ShoppingCart";
 import Counter from "../stateManagement/classcomponent/Counter";
-import Example from "/stateManagement/classcomponent/Example";
-import InputExample from "./stateManagement/classcomponent/InputExample.jsx";
-
-
+//import Example from "/stateManagement/classcomponent/Example";
+import InputExample from "../stateManagement/classcomponent/InputExample";
+import ControlledInput from "/Forms_userInput/ControlledInput.jsx";
+import ControlledTextarea from "../Forms_userInput/ControlledTextarea";
+import ControlledSelect from "../Forms_userInput/ConrolledSelect";
+import UncontrolledForm from "../Forms_userInput/UncontrolledForm";
+import UncontrolledFormWithDefault from "../Forms_userInput/UncontrolledFormWithDefault";
+import FileUploadForm from "../Forms_userInput/FileUploadForm";
+import ControlledForm from "../Forms_userInput/ControlledForm";
+import MyForm from "../Forms_userInput/MyForm";
+import RegistrationForm from "../Forms_userInput/RegistrationForm";
+import DynamicForm from "../Forms_userInput/DynamicForm";
 
 function App() {
-  const myFunction1 = () => {
-    return <h1>Hello from myFunction it is an arrow function</h1>;
-  };
+  // const myFunction1 = () => {
+  //   return <h1>Hello from myFunction it is an arrow function</h1>;
+  // };
 
-  function MyFunction(props) {
-    return (
-      <h2>
-        It is a simpel function age is {props.age}
-        Married : {props.isMarried ? "Yes" : "no"}
-      </h2>
-    );
-  }
+  // function MyFunction(props) {
+  //   return (
+  //     <h2>
+  //       It is a simpel function age is {props.age}
+  //       Married : {props.isMarried ? "Yes" : "no"}
+  //     </h2>
+  //   );
+  // }
 
-  const items = ["Apple", "Banana", "Cherry"];
+  // const items = ["Apple", "Banana", "Cherry"];
 
-  function handleCLick() {
-    console.log("button clicked ");
-    alert("button clikced");
-    return "you clicked me ";
-  }
+  // function handleCLick() {
+  //   console.log("button clicked ");
+  //   alert("button clikced");
+  //   return "you clicked me ";
+  // }
 
   return (
     <>
-      {/*<ConditionalComponent show={true}/>
+      <div>
+        <h1>Vite + React</h1>
+
+        {/* <ControlledInput />
+        <ControlledTextarea />
+        <ControlledSelect /> */}
+        {/* <FileUploadForm />
+          <UncontrolledFormWithDefault />
+        // */}
+        {/* <UncontrolledForm /> */}
+        <DynamicForm />
+        {/* <ControlledForm /> */}
+      </div>
+    </>
+  );
+}
+
+export default App;
+// /
+/* {
+    /*<ConditionalComponent show={true}/>
     <UserInfo name="Bob Johnson" age={30} email="bob.johnson@example.com" />;
     <ItemList items={items}/>
  
@@ -96,15 +124,11 @@ function App() {
 
 <MyForm />
 <ColorChanger />
-<ToggleVisibility />*/}
-      <ShoppingCart /> 
+<ToggleVisibility />
+      {/* <ShoppingCart /> 
 
       <Example />
      <Counter />
 
-      <InputExample />
-    </>
-  );
-}
-
-export default App;
+      <InputExample /> */
+// }
