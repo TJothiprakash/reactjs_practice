@@ -12,6 +12,19 @@ import SimpleCounter from "../practice_sessions/SimpleCounter";
 import Profile from "../practice_sessions/Profile";
 import SimpleTodoList from "../practice_sessions/SimpleTodoList";
 import GithubFetch from "../practice_sessions/GithubFetch";
+import Parent from "../practice_sessions/march_8/Parent";
+import Child from "../practice_sessions/march_8/Child";
+import DynamicListRendering from "../practice_sessions/march_8/DynamicListRendering";
+import InputHandling from "../practice_sessions/march_8/InputHandling";
+import ButtonToggle from "../practice_sessions/march_8/ButtonToggle";
+import GrandParent from "../practice_sessions/march_8/GrandParent";
+import UserList from "../practice_sessions/march_8/UserList";
+import FocusButton from "../practice_sessions/march_8/FocusButton";
+import CustomHookAirBNB from "../practice_sessions/march_8/CustomHookAirBNB";
+import Timer from "../practice_sessions/march_8/Timer";
+import DependencyArray from "../practice_sessions/march_8/DependencyArray";
+
+
 
 function App() {
   //const items = ["Apple", "Banana", "Cherry"];
@@ -88,7 +101,19 @@ function App() {
 
       {/* <SimpleTodoList /> */}
 
-      <GithubFetch />
+      {/* <GithubFetch /> */}
+      {/* <Parent /> */}
+
+      {/* <DynamicListRendering /> */}
+      {/* <InputHandling /> */}
+      {/* <ButtonToggle /> */}
+      {/* <GrandParent /> */}
+      {/* <UserList /> */}
+      {/* <CustomHookAirBNB /> */}
+      {/* <FocusButton /> */}
+        {/* <Timer /> */}
+
+        <DependencyArray />
     </>
   );
 }

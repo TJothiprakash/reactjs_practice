@@ -1,0 +1,106 @@
+Part 1: Core Concepts (State, Props, Events)
+Component Communication (Amazon)
+
+Create a Parent and Child component. Let the Parent hold a counter in state.
+When the Child button is clicked, increment the counter in the Parent.
+
+Dynamic List Rendering (Google)
+
+Build a TodoList component that accepts an array of todos as props and displays them.
+Add a button to remove a todo item when clicked.
+
+Input Handling (Meta)
+
+Make a controlled LoginForm component with email & password.
+Display the live input below the form fields.
+
+Button Toggle (Microsoft)
+
+Build a component with a button that toggles between “Login” and “Logout”.
+Show a message like "Welcome back, User" only when logged in.
+
+Props Drilling (Adobe)
+
+Pass a user’s name from Grandparent to Child (3-level deep component tree).
+No context allowed — use only props.
+
+⚛️ Part 2: Hooks & Lifecycle
+useEffect for API Call (Netflix)
+
+Create a UserList component that fetches users from https://jsonplaceholder.typicode.com/users
+Use useEffect and display user names in a list.
+
+Custom Hook (Airbnb)
+
+Write a custom hook useWindowWidth that tracks window resize and returns the current width.
+Use it in a component to display “Mobile View” if width < 768px.
+
+useRef for Focus (Google)
+
+Make an input form where clicking a “Focus” button puts the cursor into the input.
+Use useRef.
+
+Timer with useEffect (Facebook)
+
+Build a countdown timer from 60 seconds that updates every second.
+Add a “Reset” button to restart the timer.
+
+Dependency Array Debug (Amazon)
+
+Build a component that increments a counter every time a prop changes, but do not use the prop in the dependency array.
+Debug why it doesn't work correctly.
+
+----------------------------------completed----------------------------april_08
+
+🚀 Part 3: Advanced Practice (Performance, Context, Optimization)
+React.memo Demo (Microsoft)
+
+Build a parent with two children — one child depends on state, the other doesn’t.
+Use React.memo to avoid unnecessary re-renders.
+
+Context API (Netflix)
+
+Build a simple theme toggler using React Context.
+Clicking a button should switch between Dark and Light mode globally.
+
+Form with Validation (Apple)
+
+Create a form with email & password.
+Add validation: email must be valid, password at least 6 characters.
+Show error messages live.
+
+useReducer for Complex State (Tesla)
+
+Implement a cart system using useReducer.
+Handle ADD_ITEM, REMOVE_ITEM, CLEAR_CART.
+
+Lazy Loading (Meta)
+
+Create a component that lazily loads another component on button click.
+Show a loader while it’s loading.
+
+🧩 Part 4: Debugging & Thinking Problems
+Bug Fix Challenge
+
+Given a list with keys not defined properly, identify and fix why React warns “Each child should have a unique key”.
+
+Infinite Re-render Debug
+
+A component with useEffect causes infinite re-renders.
+What could be the cause? Fix it.
+
+Uncontrolled to Controlled Warning
+
+Given a form where input starts uncontrolled and becomes controlled, fix the warning.
+
+React Key Prop Drill
+
+Write a function that renders a list of items and intentionally use wrong key.
+Analyze the impact on performance and DOM.
+
+React StrictMode Behavior (Meta)
+
+Build a component and wrap it with React.StrictMode.
+Log the mount and unmount to observe double invocation.
+Why is it happening?
+
