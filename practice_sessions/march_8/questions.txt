@@ -84,23 +84,137 @@ Bug Fix Challenge
 
 Given a list with keys not defined properly, identify and fix why React warns “Each child should have a unique key”.
 
-Infinite Re-render Debug
+1. Infinite Re-render Debug
+❌ Problematic Code:
+jsx
+Copy
+Edit
+import { useEffect, useState } from "react";
 
-A component with useEffect causes infinite re-renders.
-What could be the cause? Fix it.
+function InfiniteLoop() {
+  const [count, setCount] = useState(0);
 
-Uncontrolled to Controlled Warning
+  useEffect(() => {
+    setCount(count + 1); // 🚨 Causes re-render every time
+  }, [count]);
 
-Given a form where input starts uncontrolled and becomes controlled, fix the warning.
+  return <div>Count: {count}</div>;
+}
+⚠️ Why Infinite Loop?
+setCount updates count
 
-React Key Prop Drill
+count is in dependency array
 
-Write a function that renders a list of items and intentionally use wrong key.
-Analyze the impact on performance and DOM.
+useEffect runs again → infinite loop
 
-React StrictMode Behavior (Meta)
+✅ Fix:
+Only run it once, or use proper conditionals:
 
-Build a component and wrap it with React.StrictMode.
-Log the mount and unmount to observe double invocation.
-Why is it happening?
+jsx
+Copy
+Edit
+useEffect(() => {
+  // Only run once on mount
+  setCount((prev) => prev + 1);
+}, []);
+2. Uncontrolled to Controlled Warning
+❌ Problem Code:
+jsx
+Copy
+Edit
+function UncontrolledInput() {
+  const [name, setName] = useState();
 
+  return (
+    <input value={name} onChange={(e) => setName(e.target.value)} />
+  );
+}
+⚠️ Why Warning?
+On initial render, value is undefined → uncontrolled
+
+After typing, value becomes a string → controlled
+
+✅ Fix:
+Initialize with "" to keep it controlled from the start.
+
+jsx
+Copy
+Edit
+const [name, setName] = useState(""); // 👈 Now it's always controlled
+3. React Key Prop Drill (Wrong key usage)
+❌ Problem Code (index used as key):
+jsx
+Copy
+Edit
+function BadKeyList({ items }) {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+⚠️ What goes wrong?
+Inserting/removing items in the list causes mismatch between keys and DOM nodes.
+
+React reuses incorrect elements → bad performance or weird bugs in inputs.
+
+✅ Correct Version:
+Use a unique ID:
+
+jsx
+Copy
+Edit
+{items.map((item) => (
+  <li key={item.id}>{item.name}</li>
+))}
+4. React StrictMode Behavior (Meta)
+✅ Component:
+jsx
+Copy
+Edit
+import React, { useEffect } from "react";
+
+function MyComponent() {
+  useEffect(() => {
+    console.log("✅ Mounted");
+
+    return () => {
+      console.log("❌ Unmounted");
+    };
+  }, []);
+
+  return <div>Hello, StrictMode!</div>;
+}
+🧪 App Component:
+jsx
+Copy
+Edit
+import React from "react";
+import ReactDOM from "react-dom/client";
+import MyComponent from "./MyComponent";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <React.StrictMode>
+    <MyComponent />
+  </React.StrictMode>
+);
+⚠️ What you’ll see in the console:
+Copy
+Edit
+✅ Mounted
+❌ Unmounted
+✅ Mounted
+🤔 Why double render?
+React.StrictMode intentionally mounts/unmounts components twice in dev mode to:
+
+Detect side effects
+
+Ensure cleanup logic works properly
+
+This only happens in development, not in production.

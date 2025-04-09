@@ -23,8 +23,13 @@ import FocusButton from "../practice_sessions/march_8/FocusButton";
 import CustomHookAirBNB from "../practice_sessions/march_8/CustomHookAirBNB";
 import Timer from "../practice_sessions/march_8/Timer";
 import DependencyArray from "../practice_sessions/march_8/DependencyArray";
-
-
+import ExperimentalPanel from "../practice_sessions/march_8/ExperimentalPanel";
+import ThemeToggler from "../practice_sessions/march_9/ToggleTheme/ThemeToggler";
+import MainPage from "../practice_sessions/march_9/ToggleTheme/MainPage";
+import { ThemeProvider } from "../practice_sessions/march_9/ToggleTheme/ThemeContext";
+import ValidateForm from "../practice_sessions/march_9/FormValidation/ValidateForm";
+import CartApp from "../practice_sessions/march_9/UseReducer/CartApp";
+import LazyLoadDemo from "../practice_sessions/march_9/LazyLoad/LazyLoadDemo";
 
 function App() {
   //const items = ["Apple", "Banana", "Cherry"];
@@ -111,9 +116,20 @@ function App() {
       {/* <UserList /> */}
       {/* <CustomHookAirBNB /> */}
       {/* <FocusButton /> */}
-        {/* <Timer /> */}
+      {/* <Timer /> */}
 
-        <DependencyArray />
+      {/* <DependencyArray /> */}
+      {/* <ExperimentalPanel /> */}
+{/* 
+      <ThemeProvider>
+        <ThemeToggler />
+        <MainPage />
+      </ThemeProvider> */}
+
+      {/* <ValidateForm /> */}
+
+      {/* <CartApp /> */}
+      <LazyLoadDemo />  
     </>
   );
 }
