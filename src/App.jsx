@@ -12,24 +12,12 @@ import SimpleCounter from "../practice_sessions/SimpleCounter";
 import Profile from "../practice_sessions/Profile";
 import SimpleTodoList from "../practice_sessions/SimpleTodoList";
 import GithubFetch from "../practice_sessions/GithubFetch";
-import Parent from "../practice_sessions/march_8/Parent";
-import Child from "../practice_sessions/march_8/Child";
-import DynamicListRendering from "../practice_sessions/march_8/DynamicListRendering";
-import InputHandling from "../practice_sessions/march_8/InputHandling";
-import ButtonToggle from "../practice_sessions/march_8/ButtonToggle";
-import GrandParent from "../practice_sessions/march_8/GrandParent";
-import UserList from "../practice_sessions/march_8/UserList";
-import FocusButton from "../practice_sessions/march_8/FocusButton";
-import CustomHookAirBNB from "../practice_sessions/march_8/CustomHookAirBNB";
-import Timer from "../practice_sessions/march_8/Timer";
-import DependencyArray from "../practice_sessions/march_8/DependencyArray";
-import ExperimentalPanel from "../practice_sessions/march_8/ExperimentalPanel";
-import ThemeToggler from "../practice_sessions/march_9/ToggleTheme/ThemeToggler";
-import MainPage from "../practice_sessions/march_9/ToggleTheme/MainPage";
-import { ThemeProvider } from "../practice_sessions/march_9/ToggleTheme/ThemeContext";
-import ValidateForm from "../practice_sessions/march_9/FormValidation/ValidateForm";
-import CartApp from "../practice_sessions/march_9/UseReducer/CartApp";
-import LazyLoadDemo from "../practice_sessions/march_9/LazyLoad/LazyLoadDemo";
+import useRegistration from "../practice_sessions/april_10/custom_hooks/useRegistration";
+import RegisterForm from "../practice_sessions/april_10/custom_hooks/useRegistration";
+import CounterComponent from "../practice_sessions/april_10/custom_hooks/CounterComponent";
+import UsageToggle from "../practice_sessions/april_10/custom_hooks/UsageToggle";
+import PreviousInputTracker from "../practice_sessions/april_10/custom_hooks/PreviousInputTracker";
+import FetchDataUsage from "../practice_sessions/april_10/custom_hooks/FetchDataUsage";
 
 function App() {
   //const items = ["Apple", "Banana", "Cherry"];
@@ -120,7 +108,7 @@ function App() {
 
       {/* <DependencyArray /> */}
       {/* <ExperimentalPanel /> */}
-{/* 
+      {/* 
       <ThemeProvider>
         <ThemeToggler />
         <MainPage />
@@ -129,7 +117,13 @@ function App() {
       {/* <ValidateForm /> */}
 
       {/* <CartApp /> */}
-      <LazyLoadDemo />  
+      {/* <LazyLoadDemo />   */}
+      {/* <RegisterForm /> */}
+      {/* <CounterComponent /> */}
+      {/* <UsageToggle /> */}
+      {/* <PreviousInputTracker /> */}
+
+      <FetchDataUsage />
     </>
   );
 }
